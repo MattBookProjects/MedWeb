@@ -1,0 +1,69 @@
+UserType
+name
+
+
+User
+email: email
+password: string
+type: FK(UserType)
+
+Patient
+first_name: varchar(64)
+last_name: varchar(64)
+pesel: nchar(11)
+email: email
+password: varchar(64)
+user: FK(User)
+
+
+
+Doctor
+first_name: varchar(64)
+last_name: varchar(64)
+email: email
+password: varchar(64)
+user: FK(User)
+services: ManyToMany(Specialization)
+appointment_slots: OneToMany(AppointmentSlot)
+
+
+
+Service
+name
+
+
+AppointmentSlot
+datetime: datetime
+duration: time
+price: float
+specialization: Specialization
+appointment: OneToOne(Appointment) NULL
+avaible: byte
+location: Location
+
+Appointment
+slot: AppointmentSlot
+patient: Patient
+doctor: doctor
+paid: byte
+status: AppointmentStatus
+
+
+
+AppointmentStatus
+name (AWAITING, CANCELED_BY_PATIENT, CANCELED_BY_DOCTOR, COMPLETED)
+
+Refund
+appointment: Appointment
+issued: byte
+
+
+DoctorsRecommendation
+content: varchar
+appointment: Appointment
+
+
+
+Location:
+city: varchar(64)
+address: varchar(64)
