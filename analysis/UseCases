@@ -1,0 +1,17 @@
+P1. Patient searches for a consultation
+P2. Patient makes an appointment
+P3. Patient makes payment for an appointment
+P4. Patient cancels an appointment
+P5. Patient checks their upcoming appointments
+P6. Patient looks through their appointment history
+P7. Patient checks doctor's note from past appointment
+
+
+D1. Doctor creates their profile
+D2. Doctor creates their schedule
+D3. Doctor modifies their schedule
+D4. Doctor cancels an appointment
+
+
+
+
